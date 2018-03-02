@@ -9,9 +9,10 @@ with open('creds\creds.json') as json_data:
 
 # setup the portal
 gis = GIS(d[1]['portal'], d[1]['user'], d[1]['pass'])
+wm_itemid = 'c9db4302670347a4830e94927764187e'
 
 #get the webmap to use offline
-offline_map_item = gis.content.get('c9db4302670347a4830e94927764187e')
+offline_map_item = gis.content.get(wm_itemid)
 offline_webmap = WebMap(offline_map_item)
 
 #loop through the webmap's bookmarks and try to create a map area for each one
